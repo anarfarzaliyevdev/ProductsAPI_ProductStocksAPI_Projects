@@ -49,12 +49,12 @@ namespace ProductApi.Tests.Controllers
             Assert.IsType<ActionResult<Product>>(notFoundResult);
         }
         [Fact]
-        public void GetProduct_ExistingIdPassed_ReturnsOkResult()
+        public async Task GetProduct_ExistingIdPassed_ReturnsOkResult()
         {
             // Arrange
             var testId = 2;
             // Act
-            var okResult =  _controller.GetProduct(testId).Result ;
+            var okResult = await  _controller.GetProduct(testId) ;
             // Assert
             Assert.IsType<OkObjectResult>(okResult.Result);
         }
