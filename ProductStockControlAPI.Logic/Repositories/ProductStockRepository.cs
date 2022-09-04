@@ -103,7 +103,7 @@ namespace ProductStockControlAPI.Logic.Repositories
             }
             else
             {
-                //logging
+                Log.Warning("Requested product stock item not found ");
             }
         }
 
