@@ -1,0 +1,196 @@
+09/03/2022 20:34:23 HTTP "GET" "/api/products/0" responded 404 in 1815.9973 ms
+09/03/2022 20:37:39 HTTP "GET" "/api/products/0" responded 404 in 1386.9661 ms
+09/03/2022 20:39:25 HTTP "GET" "/api/products/13" responded 404 in 51.8106 ms
+09/03/2022 20:39:30 HTTP "GET" "/api/products/13" responded 404 in 19.2655 ms
+09/03/2022 20:39:46 HTTP "GET" "/api/products/13" responded 404 in 12.3871 ms
+09/03/2022 20:39:47 HTTP "GET" "/api/products/13" responded 404 in 7.2359 ms
+09/03/2022 20:39:55 HTTP "GET" "/api/products/0" responded 404 in 14.9943 ms
+09/03/2022 20:39:58 HTTP "GET" "/api/products/13" responded 404 in 14.0054 ms
+09/03/2022 20:40:03 HTTP "GET" "/api/products/13" responded 404 in 11.5734 ms
+09/03/2022 20:40:45 HTTP "GET" "/api/products" responded 200 in 119.4980 ms
+09/03/2022 20:40:54 HTTP "GET" "/api/products/14" responded 200 in 14.0964 ms
+09/03/2022 20:40:54 HTTP "GET" "/api/products/14" responded 200 in 8.9815 ms
+09/03/2022 20:42:16 HTTP "GET" "/api/products" responded 200 in 1735.2984 ms
+09/03/2022 20:43:49 HTTP "GET" "/api/products" responded 200 in 2782.9730 ms
+09/03/2022 20:45:21 HTTP "GET" "/api/Products" responded 200 in 61.2537 ms
+09/04/2022 11:56:47 asdasd
+09/04/2022 11:56:50 HTTP "GET" "/api/Products" responded 200 in 3827.9801 ms
+09/04/2022 11:59:38 HTTP "GET" "/api/products/0" responded 404 in 1326.5961 ms
+09/04/2022 12:08:19 HTTP "GET" "/api/products/0" responded 404 in 2348.9676 ms
+09/04/2022 14:38:51 HTTP "GET" "/api/Products" responded 200 in 3934.6845 ms
+09/04/2022 14:39:36 Failed executing DbCommand ("71"ms) [Parameters=["@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = Single), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Products] ([CreatedDate], [IsDeleted], [Price], [ProductCategoryId], [ProductName], [State])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [ProductId]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [ProductId] = scope_identity();"
+09/04/2022 14:39:36 An exception occurred in the database while saving changes for context type '"ProductApi.Data.Contexts.ProductDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint \"FK_Products_ProductCategories_ProductCategoryId\". The conflict occurred in database \"ProductsDb\", table \"dbo.ProductCategories\", column 'ProductCategoryId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ec185263-b86f-44b8-8c7c-806563339d14
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Products_ProductCategories_ProductCategoryId". The conflict occurred in database "ProductsDb", table "dbo.ProductCategories", column 'ProductCategoryId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ec185263-b86f-44b8-8c7c-806563339d14
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+09/04/2022 14:39:36 An error occurred while updating the entries. See the inner exception for details.
+09/04/2022 14:39:36 HTTP "POST" "/api/Products" responded 500 in 436.7693 ms
+09/04/2022 14:56:02 HTTP "GET" "/api/Products" responded 200 in 1627.2043 ms
+09/04/2022 15:01:52 HTTP "GET" "/api/Categories" responded 500 in 71.1660 ms
+System.InvalidOperationException: Unable to resolve service for type 'ProductApi.Logic.Abstracts.IProductCategoryRepository' while attempting to activate 'ProductApi.Controllers.CategoriesController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+09/04/2022 15:01:52 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'ProductApi.Logic.Abstracts.IProductCategoryRepository' while attempting to activate 'ProductApi.Controllers.CategoriesController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+09/04/2022 15:02:43 HTTP "GET" "/api/Categories" responded 200 in 1681.0615 ms
+09/04/2022 15:03:03 HTTP "GET" "/api/Products" responded 200 in 169.1686 ms
+09/04/2022 15:03:21 HTTP "POST" "/api/Products" responded 201 in 434.8607 ms
+09/04/2022 15:03:26 HTTP "GET" "/api/Products" responded 200 in 18.3548 ms
+09/04/2022 15:03:53 HTTP "PUT" "/api/Products" responded 200 in 90.8663 ms
+09/04/2022 15:04:00 HTTP "GET" "/api/Products" responded 200 in 10.6578 ms
+09/04/2022 15:04:13 Failed executing DbCommand ("6"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [ProductCategoryId] = @p0
+WHERE [ProductId] = @p1;
+SELECT @@ROWCOUNT;"
+09/04/2022 15:04:13 An exception occurred in the database while saving changes for context type '"ProductApi.Data.Contexts.ProductDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint \"FK_Products_ProductCategories_ProductCategoryId\". The conflict occurred in database \"ProductsDb\", table \"dbo.ProductCategories\", column 'ProductCategoryId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:3cfe5753-d93e-423d-9543-d34b215934fe
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The UPDATE statement conflicted with the FOREIGN KEY constraint "FK_Products_ProductCategories_ProductCategoryId". The conflict occurred in database "ProductsDb", table "dbo.ProductCategories", column 'ProductCategoryId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:3cfe5753-d93e-423d-9543-d34b215934fe
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+09/04/2022 15:04:13 An error occurred while updating the entries. See the inner exception for details.
+09/04/2022 15:04:13 HTTP "PUT" "/api/Products" responded 500 in 85.3899 ms
+09/04/2022 15:04:31 HTTP "GET" "/api/Products/15" responded 404 in 51.3471 ms
+09/04/2022 15:04:38 HTTP "GET" "/api/Products/16" responded 200 in 17.7824 ms
+09/04/2022 15:04:44 HTTP "DELETE" "/api/Products/16" responded 200 in 39.4513 ms
+09/04/2022 15:04:48 HTTP "DELETE" "/api/Products/16" responded 404 in 13.1000 ms
+09/04/2022 15:04:53 HTTP "GET" "/api/Products" responded 200 in 7.4241 ms
+09/04/2022 15:05:04 HTTP "POST" "/api/Products" responded 201 in 26.2636 ms
+09/04/2022 15:05:10 HTTP "GET" "/api/Products" responded 200 in 8.4880 ms
+09/04/2022 15:05:19 HTTP "GET" "/api/Products" responded 200 in 18.1915 ms
+09/04/2022 15:05:37 HTTP "GET" "/api/products/0" responded 404 in 6.5922 ms
+09/04/2022 15:05:46 HTTP "GET" "/api/products/17" responded 200 in 10.9448 ms
+09/04/2022 15:05:48 HTTP "GET" "/api/products/17" responded 200 in 6.7077 ms
+09/04/2022 15:07:53 HTTP "GET" "/api/products/15" responded 404 in 7.5758 ms
+09/04/2022 15:09:54 HTTP "GET" "/api/products/10" responded 404 in 2618.7095 ms
+09/04/2022 15:11:37 HTTP "GET" "/api/products/0" responded 404 in 38900.5862 ms
+09/04/2022 15:13:30 HTTP "GET" "/api/products/17" responded 200 in 1536.8916 ms
+09/04/2022 17:00:14 HTTP "GET" "/api/products/17" responded 200 in 1577.7644 ms
+09/04/2022 17:00:26 HTTP "GET" "/api/products/17" responded 200 in 46.9876 ms
+09/04/2022 17:00:37 HTTP "GET" "/api/products/17" responded 200 in 27.6822 ms
+09/04/2022 17:00:45 HTTP "GET" "/api/products/17" responded 200 in 18.5438 ms
+09/04/2022 17:02:49 HTTP "GET" "/api/products/17" responded 200 in 1682.9575 ms

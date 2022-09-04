@@ -1,0 +1,68 @@
+09/03/2022 20:37:39 Response status code does not indicate success: 404 (Not Found).
+09/03/2022 20:37:39 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 1849.8584 ms
+09/03/2022 20:39:25 Response status code does not indicate success: 404 (Not Found).
+09/03/2022 20:39:25 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 67.8336 ms
+09/03/2022 20:39:30 Response status code does not indicate success: 404 (Not Found).
+09/03/2022 20:39:30 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 33.7110 ms
+09/03/2022 20:39:38 HTTP "GET" "/api/productstocks/getstock/13" responded 200 in 1609.2682 ms
+09/03/2022 20:39:46 Response status code does not indicate success: 404 (Not Found).
+09/03/2022 20:39:46 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 33.6164 ms
+09/03/2022 20:39:47 Response status code does not indicate success: 404 (Not Found).
+09/03/2022 20:39:47 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 16.9133 ms
+09/03/2022 20:39:55 Response status code does not indicate success: 404 (Not Found).
+09/03/2022 20:39:55 HTTP "POST" "/api/productstocks/addstock" responded 500 in 27.7760 ms
+09/03/2022 20:39:58 Response status code does not indicate success: 404 (Not Found).
+09/03/2022 20:39:58 HTTP "POST" "/api/productstocks/addstock" responded 500 in 21.6001 ms
+09/03/2022 20:40:03 Response status code does not indicate success: 404 (Not Found).
+09/03/2022 20:40:03 HTTP "POST" "/api/productstocks/addstock" responded 500 in 17.8488 ms
+09/03/2022 20:40:32 HTTP "GET" "/api/products" responded 404 in 0.1759 ms
+09/03/2022 20:40:54 HTTP "POST" "/api/ProductStocks/addstock" responded 200 in 252.8746 ms
+09/03/2022 20:41:08 HTTP "GET" "/api/productstocks/getstock/14" responded 200 in 29.1875 ms
+09/03/2022 20:41:54 HTTP "GET" "/api/productstocks/getstock/14" responded 200 in 1477.6891 ms
+09/03/2022 20:41:59 HTTP "GET" "/api/productstocks/getstock/14" responded 200 in 60.7984 ms
+09/03/2022 20:43:51 HTTP "GET" "/api/productstocks/getstock/14" responded 200 in 1715.3078 ms
+09/04/2022 11:59:38 Response status code does not indicate success: 404 (Not Found).
+09/04/2022 11:59:38 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 1916.2671 ms
+09/04/2022 12:01:03 asdasd
+09/04/2022 12:08:19 Response status code does not indicate success: 404 (Not Found).
+09/04/2022 12:08:19 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 2740.8878 ms
+09/04/2022 15:05:37 Response status code does not indicate success: 404 (Not Found).
+09/04/2022 15:05:37 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 1126.4316 ms
+09/04/2022 15:05:48 HTTP "POST" "/api/ProductStocks/addstock" responded 200 in 2051.8851 ms
+09/04/2022 15:06:00 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 73.7040 ms
+09/04/2022 15:06:04 HTTP "GET" "/api/ProductStocks/getstock/14" responded 204 in 20.2348 ms
+09/04/2022 15:06:38 HTTP "POST" "/api/ProductStocks/removestock" responded 200 in 51.5907 ms
+09/04/2022 15:06:50 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 14.0403 ms
+09/04/2022 15:07:01 HTTP "POST" "/api/ProductStocks/removestock" responded 200 in 61.6433 ms
+09/04/2022 15:07:04 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 28.0596 ms
+09/04/2022 15:07:11 OutOfStock error appered
+09/04/2022 15:07:11 HTTP "POST" "/api/ProductStocks/removestock" responded 400 in 14.3798 ms
+09/04/2022 15:07:45 InvalidProductId error appered
+09/04/2022 15:07:45 HTTP "POST" "/api/ProductStocks/removestock" responded 400 in 40.4688 ms
+09/04/2022 15:07:53 Response status code does not indicate success: 404 (Not Found).
+09/04/2022 15:07:53 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 25.6694 ms
+09/04/2022 15:09:54 Response status code does not indicate success: 404 (Not Found).
+09/04/2022 15:09:54 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 15673.5090 ms
+09/04/2022 15:11:37 Response status code does not indicate success: 404 (Not Found).
+09/04/2022 15:11:37 HTTP "POST" "/api/ProductStocks/addstock" responded 500 in 43014.5746 ms
+09/04/2022 15:13:31 HTTP "POST" "/api/ProductStocks/addstock" responded 200 in 3168.9662 ms
+09/04/2022 16:36:01 HTTP "POST" "/api/ProductStocks/addstock" responded 400 in 418.5964 ms
+09/04/2022 17:00:03 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 1626.5532 ms
+09/04/2022 17:00:15 HTTP "POST" "/api/ProductStocks/addstock" responded 200 in 2015.4031 ms
+09/04/2022 17:00:18 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 29.0564 ms
+09/04/2022 17:00:26 HTTP "POST" "/api/ProductStocks/addstock" responded 200 in 92.4400 ms
+09/04/2022 17:00:30 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 8.2793 ms
+09/04/2022 17:00:37 HTTP "POST" "/api/ProductStocks/addstock" responded 200 in 45.4187 ms
+09/04/2022 17:00:38 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 13.2001 ms
+09/04/2022 17:00:45 HTTP "POST" "/api/ProductStocks/addstock" responded 200 in 44.2462 ms
+09/04/2022 17:00:47 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 10.9295 ms
+09/04/2022 17:02:37 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 1550.4801 ms
+09/04/2022 17:02:49 HTTP "POST" "/api/ProductStocks/addstock" responded 200 in 1974.5114 ms
+09/04/2022 17:02:55 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 25.4086 ms
+09/04/2022 17:03:08 HTTP "POST" "/api/ProductStocks/removestock" responded 200 in 35.1207 ms
+09/04/2022 17:03:14 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 12.6844 ms
+09/04/2022 17:03:15 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 37.8513 ms
+09/04/2022 17:03:17 HTTP "POST" "/api/ProductStocks/removestock" responded 200 in 13.7041 ms
+09/04/2022 17:03:19 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 17.9632 ms
+09/04/2022 17:03:24 HTTP "POST" "/api/ProductStocks/removestock" responded 200 in 263.8431 ms
+09/04/2022 17:03:28 HTTP "GET" "/api/ProductStocks/getstock/17" responded 200 in 8.6005 ms
