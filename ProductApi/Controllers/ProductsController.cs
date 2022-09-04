@@ -42,7 +42,7 @@ namespace ProductApi.Controllers
                 var result = await _productRepository.GetProduct(id);
                 if (result == null)
                 {
-                    return NotFound();
+                    return NotFound(null);
                 }
                 return Ok(result);
             }

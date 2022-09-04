@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductApi.Shared.Models.Entities;
 using ProductStockControlAPI.Logic.Abstracts;
+using ProductStockControlAPI.Logic.CustomExceptions;
 using ProductStockControlAPI.Models.RequestInputModels;
 using ProductStockControlAPI.Models.RequestOutModels;
 using Serilog;
@@ -32,11 +33,17 @@ namespace ProductStockControlAPI.Controllers
                 var product = await _productService.GetProduct(addStockInputModel.ProductId);
                 if (product == null)
                 {
-                    Log.Error("InvalidProductId error appered");
-                    return StatusCode(StatusCodes.Status400BadRequest, "InvalidProductId error");
+                   
+                    throw new InvalidProductIdException(addStockInputModel.ProductId);
+                   
                 }
                 await _productStockRepositroy.AddStocks(addStockInputModel);
                 return Ok();
+            }
+            catch (InvalidProductIdException ex)
+            {
+                Log.Error($"{ex.Message}");
+                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
             }
             catch (Exception ex)
             {
@@ -54,16 +61,29 @@ namespace ProductStockControlAPI.Controllers
                 if (productStock == null)
                 {
                     Log.Error("InvalidProductId error appered");
-                    return StatusCode(StatusCodes.Status400BadRequest, "InvalidProductId error");
+                     throw new InvalidProductIdException(removeStockInputModel.ProductId);
+               
                 }
                 else if ( productStock.StockCount == 0)
                 {
+
                     Log.Error("OutOfStock error appered");
-                    return StatusCode(StatusCodes.Status400BadRequest, "OutOfStock error");
+                    throw new OutOfStockException();
+                
                 }
 
                 await _productStockRepositroy.RemoveStock(removeStockInputModel);
 
+            }
+            catch (InvalidProductIdException ex)
+            {
+                Log.Error($"{ex.Message}");
+                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
+            }
+            catch (OutOfStockException ex)
+            {
+                Log.Error($"{ex.Message}");
+                return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
             }
             catch (Exception ex)
             {
