@@ -29,7 +29,11 @@ namespace ProductApi.Logic.Repositories
             product.IsDeleted = false;
             product.State = true;
             var newProduct = (await appDbContext.Products.AddAsync(product)).Entity;
-            await appDbContext.SaveChangesAsync();
+           
+                await appDbContext.SaveChangesAsync();
+            
+            
+          
             return newProduct;
         }
 

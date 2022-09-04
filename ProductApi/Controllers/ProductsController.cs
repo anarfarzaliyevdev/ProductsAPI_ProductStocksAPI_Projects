@@ -30,8 +30,8 @@ namespace ProductApi.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error($"{ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error getting data from db");
+                Log.Error($"{ex.InnerException.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error getting data from db. For details review logs");
             }
         }
         [HttpGet("{id:int}")]
@@ -48,8 +48,8 @@ namespace ProductApi.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error($"{ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error getting data from db");
+                Log.Error($"{ex.InnerException.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error getting data from db. For details review logs");
             }
         }
         [HttpPost]
@@ -69,8 +69,8 @@ namespace ProductApi.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error($"{ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error creating data in db");
+                Log.Error($"{ex.InnerException.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error creating data in db. For details review logs");
             }
         }
         [HttpPut]
@@ -88,8 +88,8 @@ namespace ProductApi.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error($"{ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error updating data in db");
+                Log.Error($"{ex.InnerException.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error updating data in db. For details review logs");
             }
         }
    
@@ -107,8 +107,8 @@ namespace ProductApi.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error($"{ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error deleting data in db");
+                Log.Error($"{ex.InnerException.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error deleting data in db. For details review logs");
             }
         }
     }

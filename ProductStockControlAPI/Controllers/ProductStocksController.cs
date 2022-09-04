@@ -42,13 +42,13 @@ namespace ProductStockControlAPI.Controllers
             }
             catch (InvalidProductIdException ex)
             {
-                Log.Error($"{ex.Message}");
+                Log.Error($"{ex.InnerException.Message}");
                 return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
             }
             catch (Exception ex)
             {
-                Log.Error($"{ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error getting data from db");
+                Log.Error($"{ex.InnerException.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error getting data from db. For details review logs");
             }
            
         }
@@ -77,18 +77,18 @@ namespace ProductStockControlAPI.Controllers
             }
             catch (InvalidProductIdException ex)
             {
-                Log.Error($"{ex.Message}");
+                Log.Error($"{ex.InnerException.Message}");
                 return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
             }
             catch (OutOfStockException ex)
             {
-                Log.Error($"{ex.Message}");
+                Log.Error($"{ex.InnerException.Message}");
                 return StatusCode(StatusCodes.Status400BadRequest, ex.Message);
             }
             catch (Exception ex)
             {
-                Log.Error($"{ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error getting data from db");
+                Log.Error($"{ex.InnerException.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error getting data from db. For details review logs");
             }
             return Ok();
         }
@@ -102,8 +102,8 @@ namespace ProductStockControlAPI.Controllers
             }
             catch (Exception ex)
             {
-                Log.Error($"{ex.Message}");
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error getting data from db");
+                Log.Error($"{ex.InnerException.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error getting data from db. For details review logs");
             }
             
         }

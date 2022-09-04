@@ -44,9 +44,11 @@ namespace ProductApi.Tests.Controllers
         public async Task GetProduct_UnknownIdPassed_ReturnsNotFoundResult()
         {
             // Act
-            var notFoundResult =await _controller.GetProduct(5) as ActionResult<Product>;
+            var response= await _controller.GetProduct(5) ;
+            var notFoundResult = response.Result as NotFoundObjectResult;
+            
             // Assert
-            Assert.IsType<ActionResult<Product>>(notFoundResult);
+            Assert.IsType<NotFoundObjectResult>(notFoundResult);
         }
         [Fact]
         public async Task GetProduct_ExistingIdPassed_ReturnsOkResult()
